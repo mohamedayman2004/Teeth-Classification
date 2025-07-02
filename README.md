@@ -28,7 +28,7 @@ The dataset is divided into:
 
 - Python 3.x
 - TensorFlow / Keras
-- Google Colab
+- Visual Studio Code
 - Matplotlib & Seaborn (for visualization)
 
 
@@ -39,6 +39,63 @@ The dataset is divided into:
 - train_dir = '/content/drive/MyDrive/teeth_project/train'
 - val_dir = '/content/drive/MyDrive/teeth_project/val'
 - test_dir = '/content/drive/MyDrive/teeth_project/test'
+
+
+---
+
+## Preprocessing
+
+-Normalization [0,1]
+-Augmentation 
+
+
+---
+
+## 🧩 Model Architecture
+
+The model was designed and built using TensorFlow and Keras:
+
+
+```python
+from tensorflow import keras
+from tensorflow.keras import layers
+
+num_classes = 7
+
+model = keras.Sequential([
+    keras.Input(shape=(224, 224, 3)),
+    layers.Conv2D(32, 3, activation='relu'),
+    layers.MaxPooling2D(),
+
+    layers.Conv2D(64, 3, activation='relu'),
+    layers.MaxPooling2D(),
+
+    layers.Conv2D(128, 3, activation='relu'),
+    layers.MaxPooling2D(),
+
+    layers.Conv2D(256, 3, activation='relu'),
+    layers.MaxPooling2D(),
+
+    layers.Flatten(),
+    layers.Dense(256, activation='relu'),
+    layers.Dropout(0.5),
+    layers.Dense(128, activation='relu'),
+    layers.Dropout(0.5),
+    layers.Dense(num_classes, activation='softmax')
+])
+
+model.summary()
+```
+## 📈 Model Performance
+
+
+| Metric              | Value   |
+|---------------------|---------|
+| Training Accuracy   | 82.1%   |
+| Validation Accuracy | 81.8%   |
+| Training Loss       | 0.52    |
+| Validation Loss     | 0.54    |
+
 
 
 
