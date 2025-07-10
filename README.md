@@ -86,8 +86,7 @@ model = keras.Sequential([
 
 model.summary()
 ```
-## 📈 Model Performance
-
+## 📈 CNN Performance
 
 | Metric              | Value   |
 |---------------------|---------|
@@ -95,6 +94,17 @@ model.summary()
 | Validation Accuracy | 81.8%   |
 | Training Loss       | 0.52    |
 | Validation Loss     | 0.54    |
+
+## 🏆 ResNet50 Performance
+
+| Metric              | Value    |
+|---------------------|----------|
+| Training Accuracy   | 99.02%   |
+| Validation Accuracy | 98.83%   |
+| Training Loss       | 0.0519   |
+| Validation Loss     | 0.0340   |
+| Learning Rate       | 1e-5     |
+
 
 
 
